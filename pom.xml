@@ -19,16 +19,19 @@
     </parent>
 
     <modules>
-		<module>wolf-backend-model</module>
-        <module>wolf-backend-service</module>
         <module>wolf-backend-web</module>
         <module>wolf-backend-api</module>
+        <module>wolf-backend-service</module>
+        <module>wolf-backend-model</module>
+        <module>wolf-utils</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <!-- The main class to start by executing java -jar -->
+        <start-class>com.falcon.wolf.WolfApplication</start-class>
     </properties>
 
     <dependencies>
@@ -82,6 +85,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
             </plugin>
         </plugins>
     </build>
