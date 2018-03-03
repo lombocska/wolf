@@ -1,7 +1,7 @@
 package com.falcon.wolf.controller;
 
-import com.falcon.wolf.Response;
 import com.falcon.wolf.resource.CustomerResource;
+import com.falcon.wolf.resource.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

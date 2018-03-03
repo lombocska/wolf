@@ -1,4 +1,4 @@
-package com.falcon.wolf;
+package com.falcon.wolf.resource;
 
 import lombok.Builder;
 import lombok.Getter;
