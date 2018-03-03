@@ -7,12 +7,13 @@ import com.falcon.wolf.resource.Response;
 import com.falcon.wolf.service.CustomerService;
 import com.google.common.base.Preconditions;
 //import io.swagger.annotations.Api;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-//@Api("Customer Api Interface")
+@Api("Customer Api Interface")
 @Slf4j
 @Service
 public class CustomerResourceImpl implements CustomerResource {

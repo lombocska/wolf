@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @javax.persistence.Entity
 @DynamicUpdate
-@Table(schema = "wolf")
+@Table
 @Getter
 @Setter
 @Builder
