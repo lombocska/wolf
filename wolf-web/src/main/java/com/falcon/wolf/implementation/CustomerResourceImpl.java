@@ -13,6 +13,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Api("Customer Api Interface")
 @Slf4j
 @Service
@@ -26,18 +29,23 @@ public class CustomerResourceImpl implements CustomerResource {
     }
 
     @Override
-    public Response sayHello(String msg) {
-        return Response
-                .builder()
-                .message(msg)
-                .success(true)
-                .build();
-    }
-
-    @Override
     public void saveCustomer(CustomerDTO customerDTO) {
         Preconditions.checkNotNull(customerDTO);
         customerService.saveCustomer(fromCustomerDTO(customerDTO));
+    }
+
+    @Override
+    public List<CustomerDTO> findAll() {
+        return customerService.findAll()
+                .stream()
+                .map(this::fromCustomer)
+                .collect(Collectors.toList());
+    }
+
+    private CustomerDTO fromCustomer(Customer customer) {
+        CustomerDTO customerDTO = new CustomerDTO();
+        BeanUtils.copyProperties(customer, customerDTO);
+        return customerDTO;
     }
 
     private Customer fromCustomerDTO(CustomerDTO customerDTO) {
