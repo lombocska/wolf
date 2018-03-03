@@ -22,6 +22,7 @@
 		<module>wolf-backend-model</module>
         <module>wolf-backend-service</module>
         <module>wolf-backend-web</module>
+        <module>wolf-backend-api</module>
     </modules>
 
     <properties>
