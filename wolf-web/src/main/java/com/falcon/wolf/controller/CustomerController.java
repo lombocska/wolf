@@ -3,19 +3,17 @@ package com.falcon.wolf.controller;
 import com.falcon.wolf.dto.CustomerDTO;
 import com.falcon.wolf.resource.CustomerResource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping
 public class CustomerController {
 
     private final CustomerResource customerResource;
@@ -25,16 +23,12 @@ public class CustomerController {
         this.customerResource = customerResource;
     }
 
+    @MessageMapping("/save-customer")
+    @SendTo("/topic/home")
     @GetMapping("/home")
-    public String welcome(Model model) {
+    public List<CustomerDTO> home(Model model) {
         List<CustomerDTO> customerDTOs = customerResource.findAll();
         model.addAttribute("customers", customerDTOs);
-        return "welcome";
-    }
-
-    @PostMapping(value = "/save")
-    public ResponseEntity<List<CustomerDTO>> saveCustomers(@RequestBody List<CustomerDTO> customerDTOs) {
-        customerDTOs.forEach(customerResource::saveCustomer);
-        return new ResponseEntity<>(customerDTOs, HttpStatus.OK);
+        return customerDTOs;
     }
 }

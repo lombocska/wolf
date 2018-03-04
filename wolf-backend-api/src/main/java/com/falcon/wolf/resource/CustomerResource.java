@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CustomerResource {
 
-    void saveCustomer(@BeanParam CustomerDTO customerDTO);
+    CustomerDTO saveCustomer(@BeanParam CustomerDTO customerDTO);
 
     List<CustomerDTO> findAll();
 }
