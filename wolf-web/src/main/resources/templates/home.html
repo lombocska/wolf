@@ -7,9 +7,14 @@
           th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
           rel="stylesheet" media="screen"/>
 
-    <link rel="stylesheet" th:href="@{/css/main.css}"
-          href="../../css/main.css"/>
     <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon"/>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!--<script th:src="@{/webjars/jquery/jquery.min.js}" src="/js/jquery-3.3.1.min.js"></script>-->
+    <script src="/js/sockjs.min.js"></script>
+    <!--<script th:src="@{/webjars/sockjs-client/sockjs.min.js}" src="/js/sockjs.min.js"></script>-->
+    <script  src="/js/stomp.min.js"></script>
+    <!--<script th:src="@{/webjars/stomp-websocket/stomp.min.js}" src="/js/stomp.min.js"></script>-->
+    <script th:src="@{/js/app.js}" src="/js/app.js"></script>
 </head>
 <body>
 
@@ -25,7 +30,7 @@
 
 <div class="container">
     <div class="starter-template">
-        <table class="table">
+        <table class="table" >
             <thead>
             <tr>
                 <th scope="col">Name</th>
@@ -33,7 +38,7 @@
                 <th scope="col">Email</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="customer">
             <tr th:each="customer : ${customers}">
                 <td th:text="${customer.name}"></td>
                 <td th:text="${customer.address}"></td>
