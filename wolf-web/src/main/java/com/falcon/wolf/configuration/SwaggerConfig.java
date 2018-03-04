@@ -17,7 +17,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.falcon.wolf.controller"))
-                .paths(PathSelectors.regex("/customer.*"))
+                .paths(PathSelectors.any())
                 .build();
     }
 }

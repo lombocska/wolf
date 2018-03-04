@@ -27,9 +27,10 @@ public class CustomerResourceImpl implements CustomerResource {
     }
 
     @Override
-    public void saveCustomer(CustomerDTO customerDTO) {
+    public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
         Preconditions.checkNotNull(customerDTO);
-        customerService.saveCustomer(fromCustomerDTO(customerDTO));
+        Customer customerWithId = customerService.saveCustomer(fromCustomerDTO(customerDTO));
+        return fromCustomer(customerWithId);
     }
 
     @Override

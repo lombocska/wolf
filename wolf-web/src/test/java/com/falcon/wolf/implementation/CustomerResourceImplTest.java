@@ -20,6 +20,7 @@ import java.util.List;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -43,6 +44,8 @@ public class CustomerResourceImplTest {
 
     @Test
     public void testSaveCustomer() {
+        Customer customer = createCustomer();
+        when(customerService.saveCustomer(any(Customer.class))).thenReturn(customer);
         customerResourceImpl.saveCustomer(createCustomerDTO());
         verify(customerService).saveCustomer(customerArgumentCaptor.capture());
         TestUtil.verifyObjectFieldsEquals(createCustomerDTO(), customerArgumentCaptor.getValue());

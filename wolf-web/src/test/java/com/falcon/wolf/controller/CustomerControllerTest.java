@@ -23,7 +23,7 @@ public class CustomerControllerTest {
 
     @Test
     public void welcomeShouldReturnHTMLWithTableHeader() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/customer/home",
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/home",
                 String.class)).contains(ImmutableList.of("Name", "Address", "Email"));
     }
 }

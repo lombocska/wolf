@@ -12,14 +12,16 @@ public class StaticResourceConfiguration extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resources/webjars/");
-        registry.addResourceHandler("/img/**")
-                .addResourceLocations("classpath:/META-INF/resources/static/img/");
-        registry.addResourceHandler("/css/**")
-                .addResourceLocations("classpath:/META-INF/resources/static/css/");
-        registry.addResourceHandler("/js/**")
-                .addResourceLocations("classpath:/META-INF/resources/static/js/");
+        registry.addResourceHandler(
+                "/webjars/**",
+                "/img/**",
+                "/css/**",
+                "/js/**")
+                .addResourceLocations(
+                        "classpath:/META-INF/resources/webjars/",
+                        "classpath:/static/img/",
+                        "classpath:/static/css/",
+                        "classpath:/static/js/");
     }
 }
 
