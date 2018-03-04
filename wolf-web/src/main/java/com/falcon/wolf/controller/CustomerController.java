@@ -23,8 +23,6 @@ public class CustomerController {
         this.customerResource = customerResource;
     }
 
-    @MessageMapping("/save-customer")
-    @SendTo("/topic/home")
     @GetMapping("/home")
     public List<CustomerDTO> home(Model model) {
         List<CustomerDTO> customerDTOs = customerResource.findAll();
