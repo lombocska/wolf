@@ -1,0 +1,10 @@
+com.falcon.wolf
+com.falcon.wolf.configuration
+com.falcon.wolf.controller
+com.falcon.wolf.dto
+com.falcon.wolf.entity
+com.falcon.wolf.implementation
+com.falcon.wolf.repository
+com.falcon.wolf.resource
+com.falcon.wolf.service
+com.falcon.wolf.test_util
