@@ -6,6 +6,10 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
+/**
+ * TemplateConfig configures a TemplateResolver for Thymeleaf - SpringBoot pair.
+ */
+
 @Configuration
 public class TemplateConfig {
 

@@ -11,6 +11,11 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+/**
+ *  TestUtil provides solution the objects fields assertation.
+ *  It works with reflection.
+ */
+
 public final class TestUtil {
     private TestUtil() {
     }
