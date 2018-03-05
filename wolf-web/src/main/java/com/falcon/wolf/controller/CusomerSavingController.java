@@ -12,6 +12,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * CustomerSavingController is a simple REST Controller.
+ * It provides /save-customer endpoint to save customer by the RequestBody.
+ *
+ * If /save-customer endpoint  is called SimpMessageTemplate will call the /topic/home endpoint to
+ * send newly saved customer data to /home endpoint.
+ */
+
 @Slf4j
 @RestController
 @RequestMapping
@@ -19,6 +27,7 @@ public class CusomerSavingController {
 
     private final CustomerResource customerResource;
     private final SimpMessagingTemplate template;
+
     @Autowired
     public CusomerSavingController(CustomerResource customerResource, SimpMessagingTemplate template) {
         this.customerResource = customerResource;

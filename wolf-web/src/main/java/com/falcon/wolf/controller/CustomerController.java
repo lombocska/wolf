@@ -12,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/**
+ * CustomerController is a simple Controller.
+ * It provides /home endpoint for list all of the customer from the db
+ * in real-time with WebSocket help.
+ */
+
 @Controller
 @RequestMapping
 public class CustomerController {

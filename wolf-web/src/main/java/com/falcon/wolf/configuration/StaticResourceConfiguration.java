@@ -5,6 +5,11 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * StaticResourceConfiguration configures the static resource path for SpringBoot
+ * and handles swagger-ui.html resource(needed because of the multi-module project).
+ */
+
 @Configuration
 @EnableWebMvc
 public class StaticResourceConfiguration extends WebMvcConfigurerAdapter {
