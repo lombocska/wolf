@@ -8,12 +8,12 @@ framework with Thymeleaf and STOMP WebSocket.
 
 The home page lists all customers from the db.
 
-[Home](/resources/home.png)
+![Home](/resources/home.png)
 
 Swagger UI shows all endpoints of app. As you can see, there are /save-customer endpoint. 
 If you call this URL, the saved data appears immediately on /home page thanks for the WebSocket TCP connection.
 
-[Swagger UI](/resources/swagger-ui.png)
+![Swagger UI](/resources/swagger-ui.png)
 
 
 ### Used technologies
@@ -56,7 +56,7 @@ open your inspect window (Key F12) and on the console tab you can see the Websoc
 
 1. `clone` this repo
 2. `run` WolfApplication class with built-in tomcat 
-3. `open` [link](localhost:8080/home) 
+3. `open` [link](https://localhost:8080/home) 
 
 ## Inspiration
 
