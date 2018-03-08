@@ -14,7 +14,7 @@
   <a href="#before-installing">Before Installing</a> •
   <a href="#prerequisites">Prerequisites</a> •
   <a href="#how-to-use-with-docker">How To Use With Docker</a> •
-  <a href="#inspiration">Inspiration</a> •
+  <a href="#inspiration">Inspiration</a>
 </p>
 
 ## Introduction
