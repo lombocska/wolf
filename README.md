@@ -8,12 +8,12 @@ framework with Thymeleaf and STOMP WebSocket.
 
 The home page lists all customers from the db.
 
-![Home](/resources/home.png)
+![Home](/documentation/resources/home.png)
 
 Swagger UI shows all endpoints of app. As you can see, there are /save-customer endpoint. 
 If you call this URL, the saved data appears immediately on /home page thanks for the WebSocket TCP connection.
 
-![Swagger UI](/resources/swagger-ui.png)
+![Swagger UI](/documentation/resources/swagger-ui.png)
 
 
 ### Used technologies
