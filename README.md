@@ -78,9 +78,9 @@ Note: There are several ways to run this application, I detail two ways.
 #### With Docker
 
 1. `clone` this repo
-4. `mvn clean install`
-3. `docker-compose up -d` run this command in cmd or ubuntu bash
-6. `open` [link](https://localhost:8080/home) 
+2. `mvn clean install`
+3. `docker-compose up -d` run this command in cmd or ubuntu bash in wolf\wolf-web\wolf-docker folder
+4. `open` [link](https://localhost:8080/home) 
 
 ## Inspiration
 
