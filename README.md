@@ -8,6 +8,18 @@
 
 <h4 align="center">A smooth sea never made a skillful sailor.</h4>
 
+<div align="center">
+<!-- Build Status -->
+  <a href="https://travis-ci.org/lombocska/wolf">
+    <img src="https://travis-ci.org/lombocska/wolf.svg?branch=master"
+      alt="Build Status" />
+  </a>
+  <!-- Codec codecoverage -->
+  <a href="https://codecov.io/gh/lombocska/wolf">
+    <img src="https://codecov.io/gh/lombocska/wolf/branch/master/graph/badge.svg" />
+  </a>
+</div>
+
 <p align="center">
   <a href="#introduction">Introduction</a> •
   <a href="#used-technologies">Used Technologies</a> •
@@ -51,7 +63,7 @@ If you call this URL, the saved data appears immediately on /home page thanks fo
 
 ## Before Installing
 
-If you want to try this app without cloning, then:
+If you want to try this app without cloning, then there are AWS instance with RDS postgresql database:
 
 - open http://default-environment.sv3p8jifpb.us-east-2.elasticbeanstalk.com/home
 - open http://default-environment.sv3p8jifpb.us-east-2.elasticbeanstalk.com/swagger-ui.html
