@@ -78,6 +78,7 @@
             <artifactId>guava</artifactId>
             <version>20.0</version>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -87,6 +88,20 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <classifier>exec</classifier>
+                    <outputDirectory>wolf-docker/wolf-backend</outputDirectory>
+                </configuration>
+            </plugin>
+            <!--Codecov plugin for calculate codecoverage-->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <check />
                 </configuration>
             </plugin>
         </plugins>
