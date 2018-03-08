@@ -14,6 +14,10 @@
     <img src="https://travis-ci.org/lombocska/wolf.svg?branch=master"
       alt="Build Status" />
   </a>
+  <!-- Codec codecoverage -->
+  <a href="https://codecov.io/gh/lombocska/wolf">
+    <img src="https://codecov.io/gh/lombocska/wolf/branch/master/graph/badge.svg" />
+  </a>
 </div>
 
 <p align="center">
