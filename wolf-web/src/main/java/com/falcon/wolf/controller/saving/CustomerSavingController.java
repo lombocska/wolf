@@ -2,7 +2,9 @@ package com.falcon.wolf.controller.saving;
 
 import com.falcon.wolf.controller.CustomerResponse;
 import com.falcon.wolf.dto.CustomerDTO;
+import com.falcon.wolf.implementation.EntityConstraintViolationException;
 import com.falcon.wolf.resource.CustomerResource;
+import com.google.common.collect.ImmutableList;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
@@ -38,8 +40,15 @@ public class CustomerSavingController {
     @PostMapping(value = "/save-customer")
     public CustomerResponse saveCustomer(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("Received customer: {}", customerDTO.getName());
-        customerDTO = customerResource.saveCustomer(customerDTO);
-        template.convertAndSend("/topic/home", customerDTO);
+        try {
+            customerDTO = customerResource.saveCustomer(customerDTO);
+            template.convertAndSend("/topic/home", customerDTO);
+        } catch (EntityConstraintViolationException ex) {
+            return CustomerResponse.builder()
+                    .statusCode(400)
+                    .message(ImmutableList.of(ex.getMessage()))
+                    .build();
+        }
         return CustomerResponse.builder()
                 .customerDTOs(customerDTO)
                 .statusCode(200)

@@ -4,6 +4,7 @@ import com.falcon.wolf.entity.Customer;
 import com.falcon.wolf.repository.CustomerRepository;
 import com.falcon.wolf.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,7 +21,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer saveCustomer(Customer customer) {
-        return customerRepository.save(customer);
+        try {
+            return customerRepository.save(customer);
+        } catch (DataIntegrityViolationException ex) {
+            throw new EntityConstraintViolationException(Customer.class.getSimpleName(), customer.getName());
+        }
     }
 
     @Override
