@@ -1,0 +1,26 @@
+version: "2"
+services:
+  wolverine-database:
+    build:
+      context: wolf-database
+      dockerfile: Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=wolf
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    container_name: wolverine-database
+    image: wolverine-database
+  wolverine-backend:
+    build:
+      context: wolf-backend
+      dockerfile: Dockerfile
+    depends_on:
+      - wolverine-database
+    ports:
+      - "8080:8080"
+    container_name: wolveriner-backend
+    restart: always
+    image: wolverine-backend
