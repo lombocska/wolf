@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 /**
  * CustomerSavingController is a simple REST Controller.
  * It provides /save-customer endpoint to save customer by the RequestBody.
@@ -35,10 +37,14 @@ public class CusomerSavingController {
     }
 
     @PostMapping(value = "/save-customer")
-    public ResponseEntity<CustomerDTO> saveCustomers(@RequestBody CustomerDTO customerDTO) {
+    public CustomerResponse saveCustomers(@Valid @RequestBody CustomerDTO customerDTO) {
         log.info("Received customer: {}", customerDTO.getName());
         customerDTO = customerResource.saveCustomer(customerDTO);
         template.convertAndSend("/topic/home", customerDTO);
-        return new ResponseEntity<>(customerDTO, HttpStatus.OK);
+        return CustomerResponse.builder()
+                .customerDTOs(customerDTO)
+                .statusCode(200)
+                .build();
+//        return new ResponseEntity<>(customerDTO, HttpStatus.OK);
     }
 }
