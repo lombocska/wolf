@@ -19,7 +19,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.falcon.wolf.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.falcon.wolf.controller.saving"))
                 .paths(PathSelectors.any())
                 .build();
     }
