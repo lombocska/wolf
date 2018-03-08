@@ -10,8 +10,8 @@
 
 <div align="center">
 <!-- Build Status -->
-  <a href="https://travis-ci.org/choojs/choo">
-    <img src="https://img.shields.io/travis/choojs/choo/master.svg?style=flat-square"
+  <a href="https://travis-ci.org/lombocska/wolf">
+    <img src="https://travis-ci.org/lombocska/wolf.svg?branch=master"
       alt="Build Status" />
   </a>
 </div>
@@ -59,7 +59,7 @@ If you call this URL, the saved data appears immediately on /home page thanks fo
 
 ## Before Installing
 
-If you want to try this app without cloning, then:
+If you want to try this app without cloning, then there are AWS instance with RDS postgresql database:
 
 - open http://default-environment.sv3p8jifpb.us-east-2.elasticbeanstalk.com/home
 - open http://default-environment.sv3p8jifpb.us-east-2.elasticbeanstalk.com/swagger-ui.html
