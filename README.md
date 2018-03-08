@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="documentation/resources/wolf.png" alt="wolf" width="200"></a>
+  <a href="/documentation/resources/wolf.png" alt="wolf" width="200"></a>
   <br>
   WOLF
   <br>
