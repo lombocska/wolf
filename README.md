@@ -1,22 +1,36 @@
-# WOLF
+<h1 align="center">
+  <br>
+  <img src="https://image.flaticon.com/icons/svg/714/714005.svg" alt="wolf" width="200">
+  <br>
+  WOLF
+  <br>
+</h1>
 
-> A smooth sea never made a skillful sailor.
+<h4 align="center">A smooth sea never made a skillful sailor.</h4>
 
+<p align="center">
+  <a href="#introduction">Introduction</a> •
+  <a href="#used-technologies">Used Technologies</a> •
+  <a href="#before-installing">Before Installing</a> •
+  <a href="#prerequisites">Prerequisites</a> •
+  <a href="#how-to-use-with-docker">How To Use With Docker</a> •
+  <a href="#inspiration">Inspiration</a>
+</p>
+
+## Introduction
 
 WOLF application provides a possible solution how to use SpringBoot(2.0.0.RELEASE) lightweight 
 framework with Thymeleaf and STOMP WebSocket.
 
+
 The home page lists all customers from the db.
-
-![Home](/documentation/resources/home.png)
-
 Swagger UI shows all endpoints of app. As you can see, there are /save-customer endpoint. 
 If you call this URL, the saved data appears immediately on /home page thanks for the WebSocket TCP connection.
 
-![Swagger UI](/documentation/resources/swagger-ui.png)
+![GIF](/documentation/resources/working.gif)
 
 
-### Used technologies
+## Used technologies
 
 #### backend
 
@@ -35,7 +49,7 @@ If you call this URL, the saved data appears immediately on /home page thanks fo
 - [thymeleaf](https://www.thymeleaf.org/)
 
 
-### Before Installing
+## Before Installing
 
 If you want to try this app without cloning, then:
 
@@ -52,35 +66,26 @@ open your inspect window (Key F12) and on the console tab you can see the Websoc
 
 ```
 
-### Prerequisites
+## Prerequisites
 
 - jdk
 - maven
 - postgres
 - (docker) //if you want to use this application with docker//
 
-### Installing
 
+## How To Use With Docker
+
+```bash
+# Clone this repository
+$ git clone https://github.com/lombocska/wolf.git
+# Wrap application into jar from command line
+$ mvn clean install
+# Build images and containers
+$ docker-compose up -d
+# Open the home page
+$ go localhost:8080/home
 ```
-Note: There are several ways to run this application, I detail two ways.
-
-```
-
-#### With Java
-
-1. `clone` this repo
-2. `create` table "customer" based on [sql](wolf\wolf-web\wolf-docker\wolf-database\init.sql)
-3. `switch` database host "localhost" instead of "wolverine-database" in [settings](wolf\wolf-web\src\main\resources\application.properties)
-4. `mvn clean install`
-5. `run` wolf*-exec.jar file with java
-6. `open` [link](https://localhost:8080/home) 
-
-#### With Docker
-
-1. `clone` this repo
-2. `mvn clean install`
-3. `docker-compose up -d` run this command in cmd or ubuntu bash in wolf\wolf-web\wolf-docker folder
-4. `open` [link](https://localhost:8080/home) 
 
 ## Inspiration
 
