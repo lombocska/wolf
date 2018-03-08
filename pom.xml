@@ -87,6 +87,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <classifier>exec</classifier>
+                    <outputDirectory>wolf-docker/wolf-backend</outputDirectory>
                 </configuration>
             </plugin>
         </plugins>
