@@ -93,6 +93,8 @@ open your inspect window (Key F12) and on the console tab you can see the Websoc
 $ git clone https://github.com/lombocska/wolf.git
 # Wrap application into jar from command line
 $ mvn clean install
+# Go to the docker-compose.yml directory
+$ cd wolf-web/wolf-docker
 # Build images and containers
 $ docker-compose up -d
 # Open the home page
