@@ -8,6 +8,14 @@
 
 <h4 align="center">A smooth sea never made a skillful sailor.</h4>
 
+<div align="center">
+<!-- Build Status -->
+  <a href="https://travis-ci.org/choojs/choo">
+    <img src="https://img.shields.io/travis/choojs/choo/master.svg?style=flat-square"
+      alt="Build Status" />
+  </a>
+</div>
+
 <p align="center">
   <a href="#introduction">Introduction</a> •
   <a href="#used-technologies">Used Technologies</a> •
