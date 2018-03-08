@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="/documentation/resources/wolf.png" alt="wolf" width="200">
+  <img src="https://image.flaticon.com/icons/svg/714/714005.svg" alt="wolf" width="200">
   <br>
   WOLF
   <br>
