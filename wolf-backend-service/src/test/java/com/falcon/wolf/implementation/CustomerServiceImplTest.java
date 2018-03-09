@@ -25,7 +25,7 @@ public class CustomerServiceImplTest {
 
     @Test
     public void testSaveCustomer() {
-        customerServiceImpl.saveCustomer(Customer
+        customerServiceImpl.sendCustomerMessage(CustomerDTO
                 .builder()
                 .address("SomeAddress")
                 .build());

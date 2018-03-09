@@ -1,6 +1,5 @@
 package com.falcon.wolf;
 
-import com.falcon.listener.CustomerMessageListener;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -12,14 +11,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-
 /**
  * The WOLF implements an application that
  * provides solution Spring Boot - WebSocket STOMP - Thymeleaf combination.
@@ -33,7 +26,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableAutoConfiguration
 public class WolfApplication extends SpringBootServletInitializer {
 
-    @Value("${customer.message.queue=customerMessageQueue}")
+    @Value("${customer.message.queue:customerMessageQueue}")
     public String CUSTOMER_MESSAGE_QUEUE;
 
     public static void main(String[] args) {

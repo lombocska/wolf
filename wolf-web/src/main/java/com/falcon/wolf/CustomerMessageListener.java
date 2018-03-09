@@ -1,8 +1,9 @@
-package com.falcon.listener;
+package com.falcon.wolf;
 
 import com.falcon.wolf.entity.Customer;
 import com.falcon.wolf.implementation.CustomerDTO;
 import com.falcon.wolf.repository.CustomerRepository;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,9 +21,10 @@ public class CustomerMessageListener {
         this.customerRepository = customerRepository;
     }
 
-    public void receiveMessage(Map<String, CustomerDTO> message) {
+    public void receiveMessage(Map<String, String> message) {
         log.info("Received customerMessageMap.");
-        customerRepository.save(fromCustomerDTO(message.get("customerName")));
+        CustomerDTO customerDTO = new Gson().fromJson(message.get("customerName"), CustomerDTO.class);
+        customerRepository.save(fromCustomerDTO(customerDTO));
         log.info("Message processed.");
     }
 

@@ -3,6 +3,7 @@ package com.falcon.wolf.implementation;
 import com.falcon.wolf.entity.Customer;
 import com.falcon.wolf.repository.CustomerRepository;
 import com.falcon.wolf.service.CustomerService;
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void sendCustomerMessage(CustomerDTO customerDTO) {
-        Map<String, CustomerDTO> actionMap = new HashMap<>();
-        actionMap.put("id", customerDTO);
+        Map<String, String> actionMap = new HashMap<>();
+        Gson gson = new Gson();
+        String customerDTOJson = gson.toJson(customerDTO);
+        actionMap.put("customerName", customerDTOJson);
         log.info("Sending the index request through queue message");
         rabbitTemplate.convertAndSend(customerMessageQueue, actionMap);
     }
