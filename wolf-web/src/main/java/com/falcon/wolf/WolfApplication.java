@@ -1,5 +1,6 @@
 package com.falcon.wolf;
 
+import com.falcon.wolf.listener.CustomerMessageListener;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;

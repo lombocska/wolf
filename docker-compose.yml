@@ -2,7 +2,7 @@ version: "2"
 services:
   wolverine-database:
     build:
-      context: wolf-database
+      context: wolf-backend-model
       dockerfile: Dockerfile
     ports:
       - "5432:5432"
@@ -13,12 +13,18 @@ services:
       - PGDATA=/var/lib/postgresql/data/pgdata
     container_name: wolverine-database
     image: wolverine-database
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
   wolverine-backend:
     build:
-      context: wolf-backend
+      context: wolf-web
       dockerfile: Dockerfile
     depends_on:
       - wolverine-database
+      - rabbitmq
     ports:
       - "8080:8080"
     container_name: wolveriner-backend
