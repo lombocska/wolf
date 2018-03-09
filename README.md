@@ -91,6 +91,9 @@ open your inspect window (Key F12) and on the console tab you can see the Websoc
 ```bash
 # Clone this repository
 $ git clone https://github.com/lombocska/wolf.git
+# Use docker potgres db
+$ cd wolf-web/src/main/resources
+  Use 'wolverine-database' (docker image name) as a host instead of 'wolf.cqus2hamenyz.us-east-2.rds.amazonaws.com'
 # Wrap application into jar from command line
 $ mvn clean install
 # Go to the docker-compose.yml directory
