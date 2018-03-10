@@ -20,7 +20,6 @@
 
     <modules>
         <module>wolf-web</module>
-        <module>wolf-backend-api</module>
         <module>wolf-backend-service</module>
         <module>wolf-backend-model</module>
         <module>wolf-utils</module>
@@ -79,6 +78,11 @@
             <version>20.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -88,7 +92,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <classifier>exec</classifier>
-                    <outputDirectory>wolf-docker/wolf-backend</outputDirectory>
                 </configuration>
             </plugin>
             <!--Codecov plugin for calculate codecoverage-->

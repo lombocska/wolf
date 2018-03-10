@@ -52,6 +52,10 @@ If you call this URL, the saved data appears immediately on /home page thanks fo
 
 - [spring boot](https://spring.io/)
 
+- [WebSocket](https://spring.io/guides/gs/messaging-stomp-websocket/)
+
+- [RabbitMQ](https://www.rabbitmq.com/)
+
 #### database
 
 - [postgreSQL](https://www.postgresql.org/)
@@ -59,6 +63,10 @@ If you call this URL, the saved data appears immediately on /home page thanks fo
 #### frontend
 
 - [thymeleaf](https://www.thymeleaf.org/)
+
+#### devops
+
+- [docker](https://www.docker.com/)
 
 
 ## Before Installing
@@ -96,12 +104,9 @@ $ cd wolf-web/src/main/resources
   Use 'wolverine-database' (docker image name) as a host instead of 'wolf.cqus2hamenyz.us-east-2.rds.amazonaws.com'
 # Wrap application into jar from command line
 $ mvn clean install
-# Go to the docker-compose.yml directory
-$ cd wolf-web/wolf-docker
 # Build images and containers
 $ docker-compose up -d
-# Open the home page
-$ go localhost:8080/home
+# Open the home page - go localhost:8080/home
 ```
 
 ## Inspiration
@@ -109,3 +114,4 @@ $ go localhost:8080/home
 * **Spring IO** - *WebSocket* - [WebSocketGuide](https://spring.io/guides/gs/messaging-stomp-websocket/)
 * **Testing** - *Controller testing* [SpringBoot App Tests](https://spring.io/guides/gs/testing-web/)
 * **[MEMORYNOTFOUND](https://memorynotfound.com/)** - *Dealing with static resources* [Config Resources](https://memorynotfound.com/adding-static-resources-css-javascript-images-thymeleaf/)
+* **[LOGO](https://www.flaticon.com/)** 

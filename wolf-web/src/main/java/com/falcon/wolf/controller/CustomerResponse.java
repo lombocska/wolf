@@ -1,7 +1,6 @@
 package com.falcon.wolf.controller;
 
-import com.falcon.wolf.dto.CustomerDTO;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.falcon.wolf.implementation.CustomerDTO;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

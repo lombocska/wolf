@@ -23,11 +23,6 @@
     <dependencies>
         <dependency>
             <groupId>com.falcon</groupId>
-            <artifactId>wolf-backend-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.falcon</groupId>
             <artifactId>wolf-backend-service</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
