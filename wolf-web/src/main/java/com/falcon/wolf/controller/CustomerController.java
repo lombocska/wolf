@@ -1,10 +1,8 @@
 package com.falcon.wolf.controller;
 
-import com.falcon.wolf.dto.CustomerDTO;
-import com.falcon.wolf.resource.CustomerResource;
+import com.falcon.wolf.implementation.CustomerDTO;
+import com.falcon.wolf.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,17 +20,22 @@ import java.util.List;
 @RequestMapping
 public class CustomerController {
 
-    private final CustomerResource customerResource;
+    private final CustomerService customerService;
 
     @Autowired
-    public CustomerController(CustomerResource customerResource) {
-        this.customerResource = customerResource;
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
     }
 
     @GetMapping("/home")
     public List<CustomerDTO> home(Model model) {
-        List<CustomerDTO> customerDTOs = customerResource.findAll();
+        List<CustomerDTO> customerDTOs = customerService.findAll();
         model.addAttribute("customers", customerDTOs);
         return customerDTOs;
+    }
+
+    @RequestMapping("/")
+    public String redirectToHome(){
+        return "redirect:/home";
     }
 }

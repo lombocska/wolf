@@ -1,12 +1,13 @@
 package com.falcon.wolf.service;
 
-import com.falcon.wolf.entity.Customer;
+import com.falcon.wolf.implementation.CustomerDTO;
+import javax.ws.rs.BeanParam;
 
 import java.util.List;
 
 public interface CustomerService {
 
-    Customer saveCustomer(Customer customer);
+    List<CustomerDTO> findAll();
 
-    List<Customer> findAll();
+    void sendCustomerMessage(@BeanParam CustomerDTO customerDTO);
 }

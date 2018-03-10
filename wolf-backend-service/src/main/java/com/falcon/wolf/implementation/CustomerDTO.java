@@ -1,10 +1,7 @@
-package com.falcon.wolf.dto;
+package com.falcon.wolf.implementation;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -16,7 +13,6 @@ import javax.validation.constraints.Size;
 @Builder
 public class CustomerDTO {
 
-    private Long id;
     @NotBlank(message = "Customer name cannot be empty!")
     @Size(max = 50)
     private String name;
