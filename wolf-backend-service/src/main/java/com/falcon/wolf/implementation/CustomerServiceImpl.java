@@ -45,7 +45,7 @@ public class CustomerServiceImpl implements CustomerService {
         Map<String, String> actionMap = new HashMap<>();
         Gson gson = new Gson();
         String customerDTOJson = gson.toJson(customerDTO);
-        actionMap.put("customerName", customerDTOJson);
+        actionMap.put("customer", customerDTOJson);
         log.info("Sending the index request through queue message");
         rabbitTemplate.convertAndSend(customerMessageQueue, actionMap);
     }

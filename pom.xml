@@ -22,7 +22,6 @@
         <module>wolf-web</module>
         <module>wolf-backend-service</module>
         <module>wolf-backend-model</module>
-        <module>wolf-backend-listener</module>
         <module>wolf-utils</module>
     </modules>
 

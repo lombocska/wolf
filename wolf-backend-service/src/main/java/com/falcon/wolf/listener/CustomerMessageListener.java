@@ -25,13 +25,12 @@ public class CustomerMessageListener {
 
     public void receiveMessage(Map<String, String> message) {
         log.info("Received customerMessageMap.");
-        CustomerDTO customerDTO = new Gson().fromJson(message.get("customerName"), CustomerDTO.class);
+        CustomerDTO customerDTO = new Gson().fromJson(message.get("customer"), CustomerDTO.class);
         try {
             Customer customer = customerRepository.save(fromCustomerDTO(customerDTO));
         } catch (DataIntegrityViolationException ex) {
             throw new EntityConstraintViolationException(Customer.class.getSimpleName(), customerDTO.getName());
         }
-
         log.info("Message processed.");
     }
 
